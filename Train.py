@@ -29,8 +29,9 @@ class Train:
             self.branding_expiry_date=None
             self.branding_days_required=0
         self.status = "UNASSIGNED"
-        self.predicted_failure_risk = 0 
-        self.predicted_dirtiness_score = 0
+        # Predicted scores initialized as floats
+        self.predicted_failure_risk = 0.0
+        self.predicted_dirtiness_score = 0.0
     
     def toDict(self):
         return {
@@ -41,7 +42,9 @@ class Train:
             'branding_days_required': self.branding_days_required,
             'branding_days_completed': self.branding_days_completed,
             'branding_expiry_date' : self.branding_expiry_date,
-            'status' : self.status
+            'status' : self.status,
+            'predicted_failure_risk': float(self.predicted_failure_risk),
+            'predicted_dirtiness_score': float(self.predicted_dirtiness_score)
             
         }
 
